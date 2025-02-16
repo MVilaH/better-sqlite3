@@ -7,6 +7,10 @@
   'targets': [
     {
       'target_name': 'better_sqlite3',
+      'include_dirs':[
+        "<!(node -e \"require('node-addon-api').include\")",
+        '/data/data/com.termux/files/usr/include/node'
+      ],
       'dependencies': ['deps/sqlite3.gyp:sqlite3'],
       'sources': ['src/better_sqlite3.cpp'],
       'cflags_cc': ['-std=c++20'],
